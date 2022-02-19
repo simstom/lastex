@@ -107,3 +107,8 @@ True
 # Let's delete one of the choices. Use delete() for that.
 >>> c = q.choice_set.filter(choice_text__startswith='Just hacking')
 >>> c.delete()
+
+
+# 도커안에서 작업을 원할때
+docker exec -it 41ef2a301e10 /bin/bash
+exit

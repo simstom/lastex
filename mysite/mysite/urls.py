@@ -21,4 +21,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'), 
     path('polls/', include('polls.urls')),
+    path('analysis/', include('analysis.urls')),
+    path('project/', include('project.urls')),
+    path('viewsets/', include('viewsets.urls')),
+    path('clonestudys/', include('clonestudys.urls')),
+    path('profiles/', include('profiles.urls')),
+    path('common/', include('common.urls')),
 ]

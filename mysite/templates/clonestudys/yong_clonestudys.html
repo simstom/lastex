@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+내용을 입력하고자합니다.=============================================================
+<!-- 여기에 테스트 해보자 -->
+
+{% for feed in feed_list %}
+    <div class="border feed_box">
+      <div class="feed_name">
+        <div class="profile_box">
+          <img class="profile_img" src="{{ feed.profile_image }}">
+        </div>
+        <span class="feed_name_txt"> {{ feed.user_id }}</span>
+      </div>
+      <img class="feed_img" src="{{ feed.image }}">
+
+      <div class="feed_icon">
+        <div>
+          <span class="material-icons-outlined">
+            favorite_border
+          </span>
+          <span class="material-icons-outlined">
+            mode_comment
+          </span>
+          <span class="material-icons-outlined">
+            send
+          </span>
+        </div>
+        <div>
+          <span class="material-icons-outlined">
+            turned_in_not
+          </span>
+        </div>
+      </div>
+      <div class="feed_like">
+        <p class="feed_txt"> <b>좋아요 {{ feed.like_count }}개</b></p>
+      </div>
+      <div class="feed_content">
+        <p class="feed_txt"> <b> {{ feed.user_id }} </b> {{ feed.content }}</p>
+      </div>
+      <div class="feed_reply">
+        <span class="feed_txt"> <b> mychew </b> 댓글은 아직 모델을 안만들어서 </span>
+        <span class="feed_txt"> <b> cho </b> 항상 이 두개가 나옵니다 ㅋㅋ </span>
+      </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}

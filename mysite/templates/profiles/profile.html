@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- {'profile':profile, file_url:file_url} -->
+{{ profile }} ===============> {{ file_url }}
+
+<img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png">
+
+{{ file_url }}
+{% for file in profile %}
+    <h1> {{file.title}} </h1> 
+    <img src="{{file.image}}">
+    image : {{file.image}}
+    <br>
+    image_url : {{file.image}}
+    <br>
+    image_path : {{file.image}}
+    <!-- /media/images/car.png -->
+
+    <br><br>
+{% endfor %}
+<img src="/static/car.png">
+
+<p><a href="{% url 'profiles:upload' %}">Return to home</a></p>
+
+
+{% endblock %}

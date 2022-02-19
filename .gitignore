@@ -1,3 +1,4 @@
 log/
 polls_env/
 mysite/apps.sock
+media/

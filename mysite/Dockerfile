@@ -5,14 +5,19 @@ ENV PYTHONUNBUFFERED 1
 
 RUN apt-get -y update 
 RUN apt-get -y install vim 
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN apt -y install ./google-chrome-stable_current_amd64.deb
+RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/` curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`/chromedriver_linux64.zip
 
 RUN mkdir /srv/docker-server 
 ADD . /srv/docker-server 
 
-WORKDIR /srv/docker-server 
+WORKDIR /srv/docker-server
+
+RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
 
 RUN pip install --upgrade pip 
 RUN pip install -r requirements.txt 
 
-EXPOSE 8000
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# EXPOSE 8000
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

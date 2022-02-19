@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 {% if latest_question_listaaa %}
     <ul>
     {% for question in latest_question_listaaa %}
@@ -11,3 +15,6 @@
 
 {% load static %}
         <img src="{% static 'car.png' %}">
+        <p>car.png</p>
+
+{% endblock %}

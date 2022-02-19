@@ -3,12 +3,26 @@
 <div class="container my-3">
         <!-- (... 생략 ...) 내용추가 -->
         <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                  관심있는 내용에 대해서 (The current link item)
+                <a href="{% url 'analysis:index_analysis' %}" class="list-group-item list-group-item-action active" aria-current="true">
+                  관심있는 내용의 분석을 알고 싶다면... (analysis)
                 </a>
-                <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-                <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-                <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+                <a href="{% url 'polls:index_polls' %}" class="list-group-item list-group-item-action">설문문항에 대한 내용...(polls)</a>
+                <!-- <a href="/blog/" class="list-group-item list-group-item-action">
+                        레스트 프레임워크 Blog의 목록을 보여주는 역할 (project(REST FRAMEWORK_APIVIEW)</a> -->
+                <a href="{% url 'project:bloglist' %}" class="list-group-item list-group-item-action">
+                        레스트 프레임워크 Blog의 목록을 보여주는 역할 (project(REST FRAMEWORK_APIVIEW_list)</a>
+                <a href="{% url 'viewsets:blogviewsetslist' %}" class="list-group-item list-group-item-action">
+                        레스트 프레임워크 Blog의 목록을 보여주는 역할 (viewsets(REST FRAMEWORK_APIVIEW_list)</a>
+                <a href="{% url 'clonestudys:index_clonestudys' %}" class="list-group-item list-group-item-action">
+                        사이트를 모조품으로 공부를 위해서 만든다...(clonestudys)</a>
+                <a href="{% url 'profiles:upload' %}" class="list-group-item list-group-item-action">
+                        업로드파일에 대하여 ...(uploadfiles)</a>
+                <a href="#" class="list-group-item list-group-item-action">
+                        first_site +++++++++++++++++++++</a>
+                <a href="#" class="list-group-item list-group-item-action">
+                        second_site +++++++++++++++++++++</a>
+        
+
                 <a class="list-group-item list-group-item-action disabled">A disabled link item</a>
               </div>
     
