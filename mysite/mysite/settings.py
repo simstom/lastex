@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'clonestudys.apps.ClonestudysConfig',
     'profiles.apps.ProfilesConfig',
     'common.apps.CommonConfig',
+    'chatbot.apps.ChatbotConfig',
 ]
 
 MIDDLEWARE = [

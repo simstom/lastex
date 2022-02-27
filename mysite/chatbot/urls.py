@@ -13,19 +13,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
+
+from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+
+app_name = 'chatbot'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.index, name='index'), 
-    path('polls/', include('polls.urls')),
-    path('analysis/', include('analysis.urls')),
-    path('project/', include('project.urls')),
-    path('viewsets/', include('viewsets.urls')),
-    path('clonestudys/', include('clonestudys.urls')),
-    path('profiles/', include('profiles.urls')),
-    path('common/', include('common.urls')),
-    path('chatbot/', include('chatbot.urls')),
+    # ex: /polls/
+    path('', views.index_chatbot, name='index_chatbot'),
+    # ex: /polls/5/
+    # path('<int:question_id>/', views.detail, name='detail'),
+    # # ex: /polls/5/results/
+    # path('<int:question_id>/results/', views.results, name='results'),
+    # # ex: /polls/5/vote/
+    # path('<int:question_id>/vote/', views.vote, name='vote'),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
